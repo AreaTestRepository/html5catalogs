@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CatalogViewer — Genera Link di Invito</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+            background: #f2f2f7;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .container { width: 100%; max-width: 600px; }
+
+        header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        header .icon { font-size: 48px; margin-bottom: 12px; }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1c1c1e;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            margin-top: 6px;
+            font-size: 15px;
+            color: #6c6c70;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .card h2 {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #6c6c70;
+            margin-bottom: 16px;
+        }
+
+        .field { margin-bottom: 16px; }
+        .field:last-child { margin-bottom: 0; }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #1c1c1e;
+            margin-bottom: 6px;
+        }
+
+        label span { color: #ff3b30; margin-left: 2px; }
+
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid #e5e5ea;
+            border-radius: 10px;
+            font-size: 15px;
+            color: #1c1c1e;
+            background: #fafafa;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            border-color: #007aff;
+            background: white;
+        }
+
+        input::placeholder { color: #c7c7cc; }
+
+        .hint {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #8e8e93;
+        }
+
+        .btn-generate {
+            width: 100%;
+            padding: 16px;
+            background: #1c1c1e;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.1s;
+            margin-bottom: 16px;
+        }
+
+        .btn-generate:hover { opacity: 0.85; }
+        .btn-generate:active { transform: scale(0.98); }
+
+        .result-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            display: none;
+        }
+
+        .result-card.visible { display: block; }
+
+        .result-card h2 {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #6c6c70;
+            margin-bottom: 16px;
+        }
+
+        .link-box {
+            background: #f2f2f7;
+            border-radius: 10px;
+            padding: 14px;
+            font-size: 12px;
+            color: #3a3a3c;
+            word-break: break-all;
+            line-height: 1.5;
+            margin-bottom: 14px;
+            font-family: 'SF Mono', 'Menlo', monospace;
+            border: 1.5px solid #e5e5ea;
+        }
+
+        .btn-copy {
+            width: 100%;
+            padding: 12px;
+            background: #007aff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+
+        .btn-copy:hover { opacity: 0.85; }
+        .btn-copy.copied { background: #34c759; }
+
+        .divider {
+            height: 1px;
+            background: #e5e5ea;
+            margin: 20px 0;
+        }
+
+        .email-preview-wrapper {
+            border: 1.5px solid #e5e5ea;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .email-preview-label {
+            background: #f2f2f7;
+            padding: 8px 14px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #6c6c70;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            border-bottom: 1px solid #e5e5ea;
+        }
+
+        #emailPreview {
+            padding: 16px;
+            font-size: 14px;
+            color: #3a3a3c;
+            line-height: 1.7;
+            min-height: 120px;
+            outline: none;
+            background: white;
+        }
+
+        #emailPreview a {
+            color: #007aff;
+            text-decoration: underline;
+        }
+
+        .email-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-email {
+            flex: 1;
+            padding: 13px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .btn-email-mail {
+            background: #007aff;
+            color: white;
+            border: none;
+        }
+
+        .btn-email-mail:hover { opacity: 0.85; }
+
+        .btn-email-outlook {
+            background: white;
+            color: #0078d4;
+            border: 1.5px solid #0078d4;
+        }
+
+        .btn-email-outlook:hover {
+            background: #0078d4;
+            color: white;
+        }
+
+        .btn-email.copied {
+            background: #34c759 !important;
+            color: white !important;
+            border-color: #34c759 !important;
+        }
+
+        .error {
+            background: #fff2f2;
+            border: 1.5px solid #ffb3b3;
+            border-radius: 10px;
+            padding: 12px 14px;
+            font-size: 14px;
+            color: #ff3b30;
+            margin-bottom: 16px;
+            display: none;
+        }
+
+        .error.visible { display: block; }
+
+        .info-box {
+            background: #f0f7ff;
+            border: 1.5px solid #b3d7ff;
+            border-radius: 10px;
+            padding: 14px;
+            font-size: 13px;
+            color: #0055aa;
+            margin-top: 12px;
+            line-height: 1.7;
+        }
+
+        .info-box strong { font-weight: 600; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <header>
+        <div class="icon">📚</div>
+        <h1>CatalogViewer</h1>
+        <p>Genera il link di invito da inviare via email</p>
+    </header>
+
+    <div class="card">
+        <h2>Dati del contenuto</h2>
+
+        <div class="field">
+            <label>URL del file ZIP <span>*</span></label>
+            <input type="url" id="zipUrl"
+                placeholder="https://onedrive.live.com/... oppure https://canto...">
+            <p class="hint">Incolla il link diretto al file ZIP (OneDrive, Dropbox, Canto, ecc.)</p>
+        </div>
+
+        <div class="field">
+            <label>Nome del contenuto <span>*</span></label>
+            <input type="text" id="name" placeholder="es. Collezione Primavera 2025">
+        </div>
+
+        <div class="field">
+            <label>Versione</label>
+            <input type="text" id="version" placeholder="1.0" value="1.0">
+        </div>
+
+        <div class="field">
+            <label>URL Thumbnail <span style="color:#8e8e93; font-weight:400">(opzionale)</span></label>
+            <input type="url" id="thumbnail" placeholder="https://...">
+        </div>
+
+        <div class="field">
+            <label>Il tuo nome <span style="color:#8e8e93; font-weight:400">(opzionale)</span></label>
+            <input type="text" id="senderName" placeholder="es. Mario Rossi">
+            <p class="hint">Apparirà nell'app come "Condiviso da Mario Rossi"</p>
+        </div>
+    </div>
+
+    <div class="error" id="errorBox"></div>
+
+    <button class="btn-generate" onclick="generateLink()">
+        Genera link di invito
+    </button>
+
+    <div class="result-card" id="resultCard">
+
+        <h2>Link generato</h2>
+        <div class="link-box" id="linkBox"></div>
+        <button class="btn-copy" id="copyBtn" onclick="copyRawLink()">
+            <span>📋</span>
+            <span id="copyLabel">Copia link</span>
+        </button>
+
+        <div class="divider"></div>
+
+        <h2>Email da inviare</h2>
+        <p style="font-size:13px; color:#6c6c70; margin-bottom:12px;">
+            Puoi modificare il testo prima di copiarlo.
+        </p>
+
+        <div class="email-preview-wrapper">
+            <div class="email-preview-label">Anteprima — modificabile</div>
+            <div id="emailPreview" contenteditable="true"></div>
+        </div>
+
+        <div class="email-actions">
+            <button class="btn-email btn-email-mail" id="btnMail" onclick="copyForMail()">
+                <span>✉️</span>
+                <span>Copia per Mail</span>
+            </button>
+            <button class="btn-email btn-email-outlook" id="btnOutlook" onclick="copyForOutlook()">
+                <span>📧</span>
+                <span>Copia per Outlook</span>
+            </button>
+        </div>
+
+        <div class="info-box">
+            <strong>Come usarlo:</strong><br>
+            • <strong>Apple Mail / Gmail:</strong> clicca "Copia per Mail", apri una nuova email e incolla con ⌘V<br>
+            • <strong>Outlook:</strong> clicca "Copia per Outlook", apri una nuova email e incolla con ⌘V<br>
+            Il link apparirà come testo cliccabile. Il destinatario clicca e l'app si apre automaticamente.
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    let generatedLink = '';
+    let contentName = '';
+
+    function generateLink() {
+        const zipUrl = document.getElementById('zipUrl').value.trim();
+        const name = document.getElementById('name').value.trim();
+        const version = document.getElementById('version').value.trim() || '1.0';
+        const thumbnail = document.getElementById('thumbnail').value.trim();
+        const senderName = document.getElementById('senderName').value.trim();
+        const errorBox = document.getElementById('errorBox');
+
+        errorBox.classList.remove('visible');
+
+        if (!zipUrl) {
+            errorBox.textContent = 'Inserisci l\'URL del file ZIP.';
+            errorBox.classList.add('visible');
+            return;
+        }
+        if (!name) {
+            errorBox.textContent = 'Inserisci il nome del contenuto.';
+            errorBox.classList.add('visible');
+            return;
+        }
+        try { new URL(zipUrl); } catch {
+            errorBox.textContent = 'L\'URL del ZIP non è valido.';
+            errorBox.classList.add('visible');
+            return;
+        }
+
+        const id = name.toLowerCase()
+            .replace(/\s+/g, '-')
+            .replace(/[^a-z0-9-]/g, '')
+            .substring(0, 50);
+
+        let finalZipUrl = zipUrl;
+        if ((zipUrl.includes('sharepoint.com') ||
+             zipUrl.includes('onedrive.live.com') ||
+             zipUrl.includes('1drv.ms')) &&
+            !zipUrl.includes('download=1')) {
+            finalZipUrl += zipUrl.includes('?') ? '&download=1' : '?download=1';
+        }
+
+        const params = new URLSearchParams();
+        params.set('id', id);
+        params.set('name', name);
+        params.set('version', version);
+        params.set('url', finalZipUrl);
+        if (thumbnail) params.set('thumbnail', thumbnail);
+        if (senderName) params.set('from', senderName);
+
+        generatedLink = 'https://marcellotota.github.io/catalogs/redirect.html?' + params.toString();
+        contentName = name;
+
+        document.getElementById('linkBox').textContent = generatedLink;
+
+        const fromText = senderName
+            ? `<b>${senderName}</b> ti ha condiviso`
+            : 'Hai ricevuto';
+
+        document.getElementById('emailPreview').innerHTML =
+            `Ciao,<br><br>` +
+            `${fromText} il contenuto <b>"${name}"</b>.<br><br>` +
+            `Clicca il link qui sotto per aprirlo nell'app CatalogViewer:<br><br>` +
+            `<a href="${generatedLink}">&#x1F4D6; Apri "${name}" in CatalogViewer</a><br><br>` +
+            `<span style="font-size:12px;color:#888888;">` +
+            `Richiede l'app CatalogViewer installata sul dispositivo iOS.</span>`;
+
+        document.getElementById('resultCard').classList.add('visible');
+        document.getElementById('resultCard').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function copyRawLink() {
+        navigator.clipboard.writeText(generatedLink).then(() => {
+            const btn = document.getElementById('copyBtn');
+            const label = document.getElementById('copyLabel');
+            btn.classList.add('copied');
+            label.textContent = 'Copiato!';
+            setTimeout(() => {
+                btn.classList.remove('copied');
+                label.textContent = 'Copia link';
+            }, 2000);
+        });
+    }
+
+    // Per Apple Mail, Gmail — usa ClipboardItem con HTML
+    function copyForMail() {
+        const preview = document.getElementById('emailPreview');
+        const html = preview.innerHTML;
+        const plain = preview.innerText;
+
+        if (typeof ClipboardItem !== 'undefined') {
+            const item = new ClipboardItem({
+                'text/html': new Blob([html], { type: 'text/html' }),
+                'text/plain': new Blob([plain], { type: 'text/plain' })
+            });
+            navigator.clipboard.write([item]).then(() => {
+                showCopied('btnMail', '✓ Copiato!');
+            }).catch(() => {
+                copyViaSelection(preview, 'btnMail');
+            });
+        } else {
+            copyViaSelection(preview, 'btnMail');
+        }
+    }
+
+    // Per Outlook — seleziona e copia via execCommand
+    function copyForOutlook() {
+        const preview = document.getElementById('emailPreview');
+        copyViaSelection(preview, 'btnOutlook');
+    }
+
+    function copyViaSelection(element, btnId) {
+        const range = document.createRange();
+        range.selectNodeContents(element);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        try {
+            document.execCommand('copy');
+            showCopied(btnId, '✓ Copiato!');
+        } catch(e) {
+            alert('Seleziona manualmente il testo nell\'anteprima e copia con ⌘C');
+        }
+        sel.removeAllRanges();
+    }
+
+    function showCopied(btnId, text) {
+        const btn = document.getElementById(btnId);
+        const original = btn.innerHTML;
+        btn.classList.add('copied');
+        btn.innerHTML = `<span>${text}</span>`;
+        setTimeout(() => {
+            btn.classList.remove('copied');
+            btn.innerHTML = original;
+        }, 2500);
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && e.target.tagName === 'INPUT') generateLink();
+    });
+</script>
+</body>
+</html>
