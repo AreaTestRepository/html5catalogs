@@ -1,0 +1,67 @@
+# Create an HTML privacy policy file for the user
+
+html_content = """<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informativa sulla Privacy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #222;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Informativa sulla Privacy</h1>
+
+        <p>La presente informativa descrive le modalità di gestione dei dati personali degli utenti che utilizzano questa applicazione.</p>
+
+        <h2>Nessuna raccolta di dati personali</h2>
+        <p>Questa applicazione non raccoglie, memorizza né condivide alcun dato personale dell’utente.</p>
+
+        <h2>Assenza di tracciamento</h2>
+        <p>L’app non utilizza sistemi di tracciamento, strumenti di analytics o servizi di terze parti che raccolgono informazioni personali.</p>
+
+        <h2>Dati inseriti dall’utente</h2>
+        <p>Eventuali dati inseriti dall’utente rimangono esclusivamente sul dispositivo e non vengono trasmessi a server esterni.</p>
+
+        <h2>Contatti</h2>
+        <p>Per qualsiasi informazione è possibile contattare lo sviluppatore al seguente indirizzo email:</p>
+        <p><strong>inserisci-la-tua-email@example.com</strong></p>
+
+        <footer>
+            <p>Ultimo aggiornamento: Marzo 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
+"""
+
+file_path = "/mnt/data/privacy_policy.html"
+
+with open(file_path, "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+file_path
