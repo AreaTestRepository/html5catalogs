@@ -1,0 +1,22 @@
+[
+    {
+        "id": "Fastfood",
+        "name": "Fast Food",
+        "version": "2.0",
+        "zipUrl": "https://github.com/AreaTestRepository/html5catalogs/releases/download/v1.0/Fastfood.zip",
+        "thumbnail": "https://areatestrepository.github.io/html5catalogs/fast-food-thumb.jpg",
+        "fileSize": 2768963,
+        "updatedAt": "2026-03-26"
+     
+    },
+    {
+        "id": "Design",
+        "name": "Interior Design",
+        "version": "2.0",
+        "zipUrl": "https://github.com/AreaTestRepository/html5catalogs/releases/download/v1.0/Interiordesign.zip",
+        "thumbnail": "https://areatestrepository.github.io/html5catalogs/interior-thumb.jpg",
+        "fileSize": 0,
+        "updatedAt": "2026-03-26"
+     
+    }
+]
