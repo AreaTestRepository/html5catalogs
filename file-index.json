@@ -18,5 +18,15 @@
         "fileSize": 0,
         "updatedAt": "2026-03-26"
      
+    },
+    {
+        "id": "Kaira",
+        "name": "Kaira Collection",
+        "version": "1.0",
+        "zipUrl": "https://github.com/AreaTestRepository/html5catalogs/releases/download/v1.0/Kaira.zip",
+        "thumbnail": "https://areatestrepository.github.io/html5catalogs/kaira-thumb.jpg",
+        "fileSize": 0,
+        "updatedAt": "2026-04-07"
+     
     }
 ]
