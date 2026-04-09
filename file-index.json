@@ -38,5 +38,15 @@
         "fileSize": 0,
         "updatedAt": "2026-04-09"
      
+    },
+    {
+        "id": "Christmas",
+        "name": "Christmas catalog",
+        "version": "1.0",
+        "zipUrl": "https://github.com/AreaTestRepository/html5catalogs/releases/download/v1.0/Christmas.zip",
+        "thumbnail": "https://areatestrepository.github.io/html5catalogs/christmas-thumb.jpg",
+        "fileSize": 0,
+        "updatedAt": "2026-04-09"
+     
     }
 ]
