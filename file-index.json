@@ -48,5 +48,15 @@
         "fileSize": 0,
         "updatedAt": "2026-04-09"
      
+    },
+    {
+        "id": "Coffee",
+        "name": "Coffee cup",
+        "version": "1.0",
+        "zipUrl": "https://github.com/AreaTestRepository/html5catalogs/releases/download/v1.0/Coffee.zip",
+        "thumbnail": "https://areatestrepository.github.io/html5catalogs/coffee-thumb.jpg",
+        "fileSize": 0,
+        "updatedAt": "2026-04-09"
+     
     }
 ]
