@@ -61,5 +61,14 @@
         "thumbnail": "https://giochipreziosi.canto.global/direct/image/a1s6kopg1144h1bj08asgee04c/XE23eIVo7uwaCkKzaPP6i3sCMVU/original?content-type=image%2Fpng&name=winx-thumb.png",
         "fileSize": 39625375,
         "updatedAt": "2026-04-14"
+    },
+    {
+        "id": "Gppuzzle01",
+        "name": "GP-Puzzle Collection",
+        "version": "1.0",
+        "zipUrl": "https://giochipreziosi.canto.global/direct/other/01feti5tvh40n3hucbnvtu532g/TDAIzsc10LF4XVG5iuW_58XenE4/original?content-type=application%2Fzip&name=Puzzle.zip",
+        "thumbnail": "https://giochipreziosi.canto.global/direct/image/d1ki7cs3tl3c17e9qf8hetfe1q/30F0U0T4A0yVe01ZKDiUVi2ZWTQ/original?content-type=image%2Fpng&name=puzzle-thumb.png",
+        "fileSize": 39625375,
+        "updatedAt": "2026-04-14"
     }
 ]
