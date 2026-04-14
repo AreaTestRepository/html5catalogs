@@ -97,5 +97,14 @@
         "thumbnail": "https://giochipreziosi.canto.global/direct/image/ari9bk1amd00p4aruvjrue1a2p/ZXGgxonXcV3WhxQ2MAyG9KkWCpE/original?content-type=image%2Fpng&name=masha-tumb.png",
         "fileSize": 56755894,
         "updatedAt": "2026-04-14"
+    },
+    {
+        "id": "Smurfs01",
+        "name": "The Smurfs",
+        "version": "1.0",
+        "zipUrl": "https://giochipreziosi.canto.global/direct/other/6tuc3vgum538bagmu3vg6ufj4i/G7gGJ9oBlWdQarIBvar27mlg8tk/original?content-type=application%2Fzip&name=Smurfs.zip",
+        "thumbnail": "https://giochipreziosi.canto.global/direct/image/7lt43dh5dp5at27fv2jq37nv1c/xyzY-FOJTF3DGmfPAGD7n2KYl9g/original?content-type=image%2Fpng&name=smurfs-thumb.png",
+        "fileSize": 56755894,
+        "updatedAt": "2026-04-14"
     }
 ]
