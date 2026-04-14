@@ -70,5 +70,14 @@
         "thumbnail": "https://giochipreziosi.canto.global/direct/image/d1ki7cs3tl3c17e9qf8hetfe1q/30F0U0T4A0yVe01ZKDiUVi2ZWTQ/original?content-type=image%2Fpng&name=puzzle-thumb.png",
         "fileSize": 39625375,
         "updatedAt": "2026-04-14"
+    },
+    {
+        "id": "Gpgames01",
+        "name": "GP-Games Portfolio",
+        "version": "1.0",
+        "zipUrl": "https://giochipreziosi.canto.global/direct/other/0ra20mm4rt6jf7npsjjkdmmh1c/RBinwDmSmLw8KCje0Je3s997hlA/original?content-type=application%2Fzip&name=Gpgames.zip",
+        "thumbnail": "https://giochipreziosi.canto.global/direct/image/3p9d010jm55jh4gkt8tj2iue36/1fV4WZ35kn-koZ3G_CbF9mugOXc/original?content-type=image%2Fpng&name=gpgames-thumb.png",
+        "fileSize": 39625375,
+        "updatedAt": "2026-04-14"
     }
 ]
