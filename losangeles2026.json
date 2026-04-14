@@ -52,5 +52,14 @@
         "thumbnail": "https://giochipreziosi.canto.global/direct/image/28mn5dlfrh6bl7jb93grnvso7b/FnOh6BwkpxCxPjk5iXIK2a8Ikbs/original?content-type=image%2Fpng&name=plasticine-thumb.png",
         "fileSize": 330047278,
         "updatedAt": "2026-04-14"
+    },
+    {
+        "id": "Winx01",
+        "name": "Winx",
+        "version": "1.0",
+        "zipUrl": "https://giochipreziosi.canto.global/direct/other/rao14cp5t165v37g5cgpdhdm6u/ow5-rT2l5-oiKu-8amfyVQxA4rU/original?content-type=application%2Fzip&name=Winx.zip",
+        "thumbnail": "https://giochipreziosi.canto.global/direct/image/a1s6kopg1144h1bj08asgee04c/XE23eIVo7uwaCkKzaPP6i3sCMVU/original?content-type=image%2Fpng&name=winx-thumb.png",
+        "fileSize": 39625375,
+        "updatedAt": "2026-04-14"
     }
 ]
