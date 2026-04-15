@@ -105,7 +105,7 @@
         "zipUrl": "https://giochipreziosi.canto.global/direct/other/6tuc3vgum538bagmu3vg6ufj4i/G7gGJ9oBlWdQarIBvar27mlg8tk/original?content-type=application%2Fzip&name=Smurfs.zip",
         "thumbnail": "https://giochipreziosi.canto.global/direct/image/7lt43dh5dp5at27fv2jq37nv1c/xyzY-FOJTF3DGmfPAGD7n2KYl9g/original?content-type=image%2Fpng&name=smurfs-thumb.png",
         "fileSize": 56755894,
-        "updatedAt": "2026-04-14"
+        "updatedAt": "2026-04-15"
     },
     {
         "id": "4sf",
@@ -114,6 +114,15 @@
         "zipUrl": "https://giochipreziosi.canto.global/direct/other/decqegv0gh2134e33ilu47k77r/wARXlHjiMa2Ea06hueyrImYcfu4/original?content-type=application%2Fzip&name=4sf.zip",
         "thumbnail": "https://giochipreziosi.canto.global/direct/image/c2assc8hq529h4bcr1vs73ch08/181mjKkqlqBVbrgwEAApOxSDhG8/original?content-type=image%2Fpng&name=4fs-thumb.png",
         "fileSize": 56755894,
-        "updatedAt": "2026-04-14"
+        "updatedAt": "2026-04-15"
+    },
+    {
+        "id": "Famosabrands01",
+        "name": "Famosa Brands",
+        "version": "1.0",
+        "zipUrl": "https://giochipreziosi.canto.global/direct/other/kis2sk719h21dfdt8d540c2t29/QSevaAl6xGFL6KAIbxkd1fRejXQ/original?content-type=application%2Fzip&name=Famosabrands.zip",
+        "thumbnail": "https://giochipreziosi.canto.global/direct/image/ojh1lnhe0t47bd4l6llvp5ec62/gZi3pDQ_bGDWUM6HOnA99DbKKGM/original?content-type=image%2Fpng&name=famosabrands-thumb.png",
+        "fileSize": 56755894,
+        "updatedAt": "2026-04-15"
     }
 ]
