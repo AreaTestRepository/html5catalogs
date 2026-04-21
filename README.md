@@ -23,9 +23,11 @@ Catalog Viewer gives you full control over your digital publishing workflow—si
 
 Transform your content into a portable, offline-ready experience with Catalog Viewer.
 
-How to use the App:
+**How to use the App:**
+
 To download the sites locally, you can proceed in two ways:
-1.
+
+**1.**
 Save the site(s) in .zip format in a repository that doesn't require authentication and edit a json file pointing to the site URLs like this:
 
 ```json
@@ -48,7 +50,7 @@ Save the .json in a free repository too, then enter the URL to the JSON file in 
 
 Using a Json file with correct id and version let you manage the update of the same site.
 
-2.
+**2.**
 Share the .zip file via email using the form found here: https://areatestrepository.github.io/html5catalogs/link-generator.html. 
 Once generated the link you can edit and modify the message and copy and paste it in your preferred mail client.
 
