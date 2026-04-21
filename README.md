@@ -41,6 +41,7 @@ Save the site(s) in .zip format in a repository that doesn't require authenticat
 ]
 
 Save the .json in a free repository too, then enter the URL to the JSON file in the app settings:
+
 <img width="300" height="566" alt="viewer_settings01" src="https://github.com/user-attachments/assets/f33cc317-bd9e-441d-ba1a-f73890a51c63" />
 
 Using a Json file with correct id and version let you manage the update of the same site.
@@ -55,14 +56,14 @@ ALERT:
 Exporting to HTML5 using the in5 extension works perfectly for all multimedia content, but if you use buttons that start videos in fullscreen mode you need to take these precautions: 
 
 add 2 files (video.css and in5-fix-ipad.js) in the "in5 -> Export HTML5 with in5 -> Resources" menu and flag Append to Exiting for both.
+
 <img width="400" height="327" alt="in5_panel01" src="https://github.com/user-attachments/assets/30bb039c-bfac-4b15-bb6a-6a2df1b681c2" />
 
 
 You can find the 2 files to download in this repository
 
-
-
-2) The videos must not be hidden under the buttons but must be left above by setting the opacity to 0.5%. 
+2) The videos must not be hidden under the buttons but must be left above by setting the opacity to 0.5%.
+ 
 <img width="400" height="244" alt="inDesign_settings01" src="https://github.com/user-attachments/assets/98757b42-61e3-4c7c-bbf4-8ae0cbea43b1" />
 
 This operation is necessary due to how WebKit manages the "User Gesture" on iPadOS devices.
