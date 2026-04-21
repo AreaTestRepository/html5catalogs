@@ -28,6 +28,7 @@ To download the sites locally, you can proceed in two ways:
 1.
 Save the site(s) in .zip format in a repository that doesn't require authentication and edit a json file pointing to the site URLs like this:
 
+```json
 [
     {
         "id": "UniqueID",
