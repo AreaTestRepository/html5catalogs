@@ -1,5 +1,5 @@
-What it does:
-Catalog Viewer is a powerful and flexible app designed to bring your digital content directly to your iPhone or iPad—anytime, anywhere, even without an internet connection.
+**What it does:**
+**Catalog Viewer** is a powerful and flexible app designed to bring your digital content directly to your iPhone or iPad anytime, anywhere, even without an internet connection.
 
 With Catalog Viewer, you can download and store websites packaged in .zip format from an online repository—no authentication required. 
 
