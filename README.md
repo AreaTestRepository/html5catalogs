@@ -40,6 +40,7 @@ Save the site(s) in .zip format in a repository that doesn't require authenticat
         "updatedAt": "2026-04-14"
     }
 ]
+```
 
 Save the .json in a free repository too, then enter the URL to the JSON file in the app settings:
 
