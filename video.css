@@ -1,0 +1,11 @@
+video[data-id] {
+    /* Il video deve essere nel DOM e avere dimensioni minime */
+    display: block !important;
+    opacity: 0.001 !important;
+    width: 1px !important;
+    height: 1px !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+}
